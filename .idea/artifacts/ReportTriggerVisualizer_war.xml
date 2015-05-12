@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ReportTriggerVisualizer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ReportTriggerVisualizer.war">
+      <element id="artifact" artifact-name="ReportTriggerVisualizer:war exploded" />
+    </root>
+  </artifact>
+</component>
