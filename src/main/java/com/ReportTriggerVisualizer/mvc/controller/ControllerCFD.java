@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/CFDreports.jsp")
+@RequestMapping("/CFDreports")
 public class ControllerCFD {
 
     @RequestMapping(method = RequestMethod.GET)
