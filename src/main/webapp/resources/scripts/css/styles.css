@@ -10,5 +10,8 @@ td.bottom {height: 35%;}
 .reportMainFrame {width: 100%; height: 100%; border-collapse: collapse; border-top-color: black; border-left-color: black;}
 .backToPlatforms {width: 15%; height: 10%; background-color: slategrey; border-right-color: black; border-bottom-color: black;}
 .serverName {background-color: slategrey; border-left-color: black; border-bottom-color: black;}
-td.report1, td.report2, td.report3, td.report4, td.reportEmpty {width: 15%; height: 10%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
+td.report1, td.report2, td.report3, td.report4{width: 15%; height: 10%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
 td.reportEmpty {width:15%; height: 50%}
+
+table.report1 {width: 100%; height: 100%}
+td.enterNumber {height: 5%; margin-left: 15px;}

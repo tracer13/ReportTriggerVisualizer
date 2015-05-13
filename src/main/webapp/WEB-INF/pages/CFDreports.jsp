@@ -20,12 +20,25 @@
                     Report 1
                 </td>
                 <td class="reportWindow" rowspan="5" align="middle">
-                    Reports area
+
 
                     <table border="1" class="report1">
                         <tr>
-                            <td class="enterNumber" colspan="2">
+                            <td class="enterNumber" colspan="2" align="left">
                                 Enter account Number
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="accountInputArea" align="middle">
+                                Input field
+                            </td>
+                            <td class="submitButtonArea" align="middle">
+                                Button
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="outputArea" colspan="2" align="middle">
+                                Output
                             </td>
                         </tr>
                     </table>
