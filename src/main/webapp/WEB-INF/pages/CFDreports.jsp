@@ -4,8 +4,13 @@
 <head>
     <title>CFD Report</title>
     <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel= "stylesheet" type="text/css" href="<c:url value="/resources/css/styles.css" />"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
+<body>
     <table border="1" class="reportMainFrame">
         <tbody>
             <tr>
@@ -18,7 +23,7 @@
             </tr>
             <tr>
                 <td class="report1" align="middle">
-                    Report 1
+                    <input class="groupReportButton" type="button" id="groupReportButton" value="Group Change Log"/>
                 </td>
                 <td class="reportWindow" rowspan="5" align="middle">
 
@@ -34,24 +39,33 @@
                                     <input type="text" id="accountInput" name="accountInput"/>
                                 </td>
                                 <td class="submitButtonArea" align="left">
-                                    <input type="submit" id="accountSubmitButton" value="Show groups changelog"
+                                    <input type="submit" id="accountSubmitButton" value="Get groups">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="outputArea" colspan="2" align="left">
-                                    <table class="groupOutput" border="1">
-                                        <tr>
-                                            <td><c:out value="${groupHistoryList[0].userLogin}"/></td>
-                                            <td><c:out value="${groupHistoryList[0].dateTime}"/></td>
-                                            <td><c:out value="${groupHistoryList[0].oldUserGroup}"/></td>
-                                        </tr>
-                                        <c:forEach items="${groupHistoryList}" var="group">
-                                            <tr>
-                                                <td>${group.userLogin}</td>
-                                                <td>${group.dateTime}</td>
-                                                <td>${group.newUserGroup}</td>
+                                    <table class="groupOutput table-hover">
+                                        <thead>
+                                            <tr align="middle">
+                                                <th class="accountCell">Account</th>
+                                                <th class="changeTimeCell">Change time</th>
+                                                <th class="groupCell">Group</th>
                                             </tr>
-                                        </c:forEach>
+                                        </thead>
+                                        <tbody>
+                                            <tr align="middle">
+                                                <td class="accountCell"><c:out value="${groupHistoryList[0].userLogin}"/></td>
+                                                <td class="changeTimeCell"><c:out value="${groupHistoryList[0].dateTime}"/></td>
+                                                <td class="groupCell"><c:out value="${groupHistoryList[0].oldUserGroup}"/></td>
+                                            </tr>
+                                            <c:forEach items="${groupHistoryList}" var="group">
+                                                <tr align="middle">
+                                                    <td class="accountCell">${group.userLogin}</td>
+                                                    <td class="changeTimeCell">${group.dateTime}</td>
+                                                    <td class="groupCell">${group.newUserGroup}</td>
+                                                </tr>
+                                            </c:forEach>
+                                        </tbody>
                                     </table>
                                 </td>
                             </tr>
@@ -82,4 +96,5 @@
             </tr>
         </tbody>
     </table>
+</body>
 </html>

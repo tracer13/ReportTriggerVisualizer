@@ -20,7 +20,7 @@ public class CFDServiceImpl implements CFDService {
     public List<UsersLogCFD> getGroupLogForAccount(Long userLogin) {
 
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("FROM UsersLogCFD WHERE userLogin=:userLogin");
+                .createQuery("FROM UsersLogCFD WHERE changes like '%mt4_user_GROUP%' and userLogin=:userLogin");
         query.setParameter("userLogin",userLogin);
         return query.list();
     }

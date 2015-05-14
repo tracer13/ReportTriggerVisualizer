@@ -1,6 +1,6 @@
-html, body {margin: 0px; padding: 0px;}
+html, body {margin: 0; padding: 0;}
 table.main {width: 100%; height: 100%; border-collapse: collapse;}
-td {padding: 0px;}
+td {padding: 0;}
 td.top {height: 35%;}
 td.CFD {width: 33%; height: 30%;}
 td.FX {width: 34%; height: 30%;}
@@ -9,15 +9,29 @@ td.bottom {height: 35%;}
 
 .reportMainFrame {width: 100%; height: 100%; border-collapse: collapse; border-top-color: black; border-left-color: black;}
 .reportWindow {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-right: 15px;}
-.backToPlatforms {width: 15%; height: 10%; background-color: slategrey; border-right-color: black; border-bottom-color: black;}
+.backToPlatforms {width: 15%; height: 7%; background-color: slategrey; border-right-color: black; border-bottom-color: black;}
 .serverName {background-color: slategrey; border-left-color: black; border-bottom-color: black;}
-td.report1, td.report2, td.report3, td.report4{width: 15%; height: 10%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
-td.reportEmpty {width:15%; height: 50%;}
+td.report1, td.report2, td.report3, td.report4{width: 15%; height: 5%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
+td.reportEmpty {width:15%;}
 
 table.report1 {width: 100%; height: 100%; border-collapse: collapse;}
-td.enterNumber {height: 5%; padding-left: 5px;}
+td.enterNumber {height: 5%; padding-left: 15px;}
 td.accountInputArea {height: 5%; width: 11%; padding-left: 15px;}
 td.submitButtonArea {height: 5%;}
-td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px;}
+td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
-table.groupOutput {width: 100%; height: 100%; border-collapse: collapse;}
+table.groupOutput {width: 35%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
+th.accountCell {width: 8%;}
+th.changeTimeCell {width: 17%;}
+th.groupCell {width: 10%}
+
+input.groupReportButton {display: inline-block;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: dodgerblue;
+    border: 0;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
+input.groupReportButton:hover {background-color: azure; font-weight: bolder;}
