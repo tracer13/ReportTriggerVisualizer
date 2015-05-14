@@ -4,7 +4,7 @@ import com.ReportTriggerVisualizer.mvc.model.UsersLogCFD;
 
 import java.util.List;
 
-public interface UserService {
+public interface CFDService {
 
-    List<UsersLogCFD> getAllLogsOnAction(String action);
+    public List<UsersLogCFD> getGroupLogForAccount (Long userLogin);
 }

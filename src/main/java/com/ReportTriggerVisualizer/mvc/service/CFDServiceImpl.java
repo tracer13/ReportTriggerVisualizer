@@ -11,19 +11,17 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService{
+public class CFDServiceImpl implements CFDService {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    SessionFactory sessionFactory;
 
     @Override
-    public List<UsersLogCFD> getAllLogsOnAction(String action) {
-        Query query = sessionFactory.getCurrentSession()
-                .createQuery("FROM UsersLogCFD WHERE action =:action");
-        query.setParameter("action", action);
+    public List<UsersLogCFD> getGroupLogForAccount(Long userLogin) {
 
+        Query query = sessionFactory.getCurrentSession()
+                .createQuery("FROM UsersLogCFD WHERE userLogin=:userLogin");
+        query.setParameter("userLogin",userLogin);
         return query.list();
     }
-
-
 }

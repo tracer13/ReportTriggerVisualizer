@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--@elvariable id="groupHistoryList" type="java.util.List"--%>
 <html>
 <head>
     <title>CFD Report</title>
@@ -21,28 +22,41 @@
                 </td>
                 <td class="reportWindow" rowspan="5" align="middle">
 
-
-                    <table border="1" class="report1">
-                        <tr>
-                            <td class="enterNumber" colspan="2" align="left">
-                                Enter account Number
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="accountInputArea" align="middle">
-                                Input field
-                            </td>
-                            <td class="submitButtonArea" align="middle">
-                                Button
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="outputArea" colspan="2" align="middle">
-                                Output
-                            </td>
-                        </tr>
-                    </table>
-
+                    <form id="groupChangesForAccount" method="GET" action="/CFDreports/getLogs">
+                        <table border="1" class="report1">
+                            <tr>
+                                <td class="enterNumber" colspan="2" align="left">
+                                    Enter account Number:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="accountInputArea" align="left">
+                                    <input type="text" id="accountInput" name="accountInput"/>
+                                </td>
+                                <td class="submitButtonArea" align="left">
+                                    <input type="submit" id="accountSubmitButton" value="Show groups changelog"
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="outputArea" colspan="2" align="left">
+                                    <table class="groupOutput" border="1">
+                                        <tr>
+                                            <td><c:out value="${groupHistoryList[0].userLogin}"/></td>
+                                            <td><c:out value="${groupHistoryList[0].dateTime}"/></td>
+                                            <td><c:out value="${groupHistoryList[0].oldUserGroup}"/></td>
+                                        </tr>
+                                        <c:forEach items="${groupHistoryList}" var="group">
+                                            <tr>
+                                                <td>${group.userLogin}</td>
+                                                <td>${group.dateTime}</td>
+                                                <td>${group.newUserGroup}</td>
+                                            </tr>
+                                        </c:forEach>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
 
                 </td>
             </tr>
