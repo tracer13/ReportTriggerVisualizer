@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--@elvariable id="groupHistoryList" type="java.util.List"--%>
+<%--@elvariable id="stateHistoryList" type="java.util.List"--%>
 <html>
 <head>
     <title>CFD Report</title>
@@ -7,15 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel= "stylesheet" type="text/css" href="<c:url value="/resources/css/styles.css" />"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="<c:url value="/resources/js/scripts.js"/>"></script>
 </head>
 <body>
     <table border="1" class="reportMainFrame">
         <tbody>
             <tr>
                 <td class="backToPlatforms" align="middle">
-                    <a href="<c:out value="/"/>">Back</a>
+                    <a class="backButton" target="_blank" href="<c:out value="/"/>">Back</a>
                 </td>
                 <td class="serverName" align="middle">
                     <h2>CFD Reports</h2>
@@ -27,7 +30,7 @@
                 </td>
                 <td class="reportWindow" rowspan="5" align="middle">
 
-                    <form id="groupChangesForAccount" method="GET" action="/CFDreports/getLogs">
+                    <form id="groupChangesForAccount" method="GET" action="/CFDreports/getGroupLogs" hidden>
                         <table border="1" class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">
@@ -36,23 +39,24 @@
                             </tr>
                             <tr>
                                 <td class="accountInputArea" align="left">
-                                    <input type="text" id="accountInput" name="accountInput"/>
+                                    <input type="text" id="accountInputForGroup" name="accountInputForGroup"/>
                                 </td>
                                 <td class="submitButtonArea" align="left">
-                                    <input type="submit" id="accountSubmitButton" value="Get groups">
+                                    <input type="submit" id="accountSubmitButtonForGroup" value="Get groups">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="outputArea" colspan="2" align="left">
+
                                     <table class="groupOutput table-hover">
                                         <thead>
-                                            <tr align="middle">
+                                            <tr>
                                                 <th class="accountCell">Account</th>
                                                 <th class="changeTimeCell">Change time</th>
                                                 <th class="groupCell">Group</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="groupTableBody">
                                             <tr align="middle">
                                                 <td class="accountCell"><c:out value="${groupHistoryList[0].userLogin}"/></td>
                                                 <td class="changeTimeCell"><c:out value="${groupHistoryList[0].dateTime}"/></td>
@@ -72,11 +76,62 @@
                         </table>
                     </form>
 
+
+                    <form id="stateChangesForAccount" method="GET" action="/CFDreports/getStateLogs" hidden>
+                        <table border="1" class="report1">
+                            <tr>
+                                <td class="enterNumber" colspan="2" align="left">
+                                    Enter account Number:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="accountInputArea" align="left">
+                                    <input type="text" id="accountInputForState" name="accountInputForState"/>
+                                </td>
+                                <td class="submitButtonArea" align="left">
+                                    <input type="submit" id="accountSubmitButtonForState" value="Get state">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="outputArea" colspan="2" align="left">
+
+                                    <table class="stateOutput table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th class="accountCell">Account</th>
+                                            <th class="changeTimeCell">Change time</th>
+                                            <th class="groupCell">State</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="stateTableBody">
+                                        <tr align="middle">
+                                            <td class="accountCell"><c:out value="${stateHistoryList[0].userLogin}"/></td>
+                                            <td class="changeTimeCell"><c:out value="${stateHistoryList[0].dateTime}"/></td>
+                                            <td class="groupCell"><c:out value="${stateHistoryList[0].oldUserState}"/></td>
+                                        </tr>
+                                        <c:if test="${not empty state.newUserState}">
+                                        <c:forEach items="${stateHistoryList}" var="state">
+                                            <tr align="middle">
+                                                <td class="accountCell">${state.userLogin}</td>
+                                                <td class="changeTimeCell">${state.dateTime}</td>
+                                                <td class="groupCell">${state.newUserState}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </c:if>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+
                 </td>
             </tr>
             <tr>
                 <td class="report2" align="middle">
-                    Report 2
+                    <input class="stateReportButton" type="button" id="stateReportButton" value="State Change Log"/>
                 </td>
             </tr>
             <tr>

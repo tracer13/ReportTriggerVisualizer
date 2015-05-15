@@ -9,7 +9,7 @@ td.bottom {height: 35%;}
 
 .reportMainFrame {width: 100%; height: 100%; border-collapse: collapse; border-top-color: black; border-left-color: black;}
 .reportWindow {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-right: 15px;}
-.backToPlatforms {width: 15%; height: 7%; background-color: slategrey; border-right-color: black; border-bottom-color: black;}
+.backToPlatforms {width: 15%; height: 7%; border-right-color: black; border-bottom-color: black;} /*background-color: slategrey; */
 .serverName {background-color: slategrey; border-left-color: black; border-bottom-color: black;}
 td.report1, td.report2, td.report3, td.report4{width: 15%; height: 5%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
 td.reportEmpty {width:15%;}
@@ -20,18 +20,25 @@ td.accountInputArea {height: 5%; width: 11%; padding-left: 15px;}
 td.submitButtonArea {height: 5%;}
 td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
-table.groupOutput {width: 35%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
-th.accountCell {width: 8%;}
-th.changeTimeCell {width: 17%;}
-th.groupCell {width: 10%}
+table.groupOutput, table.stateOutput {width: 35%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
+table.groupOutput thead>tr>th, table.stateOutput thead>tr>th {border-bottom: 2px solid darkslategrey;}
+table.groupOutput tbody>tr>td, table.stateOutput thead>tr>td {border-top: 1px solid darkslategrey;}
+.accountCell {width: 8%; text-align: center;}
+.changeTimeCell {width: 17%; text-align: center;}
+.groupCell {width: 10%; text-align: center;}
 
-input.groupReportButton {display: inline-block;
+input.groupReportButton, input.stateReportButton {display: inline-block;
     padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     background-color: dodgerblue;
-    border: 0;
+    border: 2px solid dodgerblue;
     font-size: 15px;
     font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
-input.groupReportButton:hover {background-color: azure; font-weight: bolder;}
+input.groupReportButton:hover, input.stateReportButton:hover {background-color: azure; font-weight: bolder;}
+
+a.backButton, a.backButton:link, a.backButton:visited {font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;
+    background-color: slategrey;
+    color:black;
+    font-weight: bold;}

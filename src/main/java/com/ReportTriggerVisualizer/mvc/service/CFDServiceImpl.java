@@ -24,4 +24,13 @@ public class CFDServiceImpl implements CFDService {
         query.setParameter("userLogin",userLogin);
         return query.list();
     }
+
+    @Override
+    public List<UsersLogCFD> getStateLogForAccount(Long userLogin) {
+
+        Query query= sessionFactory.getCurrentSession()
+                .createQuery("FROM UsersLogCFD WHERE changes like 'mt4_user_State' and userLogin=:userLogin");
+        query.setParameter("userLogin",userLogin);
+        return query.list();
+    }
 }
