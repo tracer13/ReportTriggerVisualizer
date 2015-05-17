@@ -18,7 +18,7 @@
         <tbody>
             <tr>
                 <td class="backToPlatforms" align="middle">
-                    <a class="backButton" target="_blank" href="<c:out value="/"/>">Back</a>
+                    <input class="backButton" type="button" onclick="self.location='/'" value="Back"/>
                 </td>
                 <td class="serverName" align="middle">
                     <h2>CFD Reports</h2>
@@ -109,15 +109,15 @@
                                             <td class="changeTimeCell"><c:out value="${stateHistoryList[0].dateTime}"/></td>
                                             <td class="groupCell"><c:out value="${stateHistoryList[0].oldUserState}"/></td>
                                         </tr>
-                                        <c:if test="${not empty state.newUserState}">
                                         <c:forEach items="${stateHistoryList}" var="state">
+                                            <%--<c:if test="${not empty state.newUserState}">--%>
                                             <tr align="middle">
                                                 <td class="accountCell">${state.userLogin}</td>
                                                 <td class="changeTimeCell">${state.dateTime}</td>
                                                 <td class="groupCell">${state.newUserState}</td>
                                             </tr>
+                                            <%--</c:if>--%>
                                         </c:forEach>
-                                        </c:if>
                                         </tbody>
                                     </table>
 
