@@ -27,11 +27,11 @@ td.accountInputArea {height: 5%; width: 11%; padding-left: 15px;}
 td.submitButtonArea {height: 5%;}
 td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
-table.groupOutput, table.stateOutput, table.idOutput {width: 45%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
+table.groupOutput, table.stateOutput, table.idOutput {width: 55%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
 table.groupOutput thead>tr>th, table.stateOutput thead>tr>th, table.idOutput thead>tr>th {border-bottom: 2px solid darkslategrey;}
 table.groupOutput tbody>tr>td, table.stateOutput tbody>tr>td, table.idOutput tbody>tr>td {border-top: 1px solid darkslategrey; padding-top: 7px; padding-bottom: 7px;}
-.accountCell {width: 8%; text-align: center;}
-.changeTimeCell {width: 25%; text-align: center;}
+.accountCell {width: 10%; text-align: center;}
+.changeTimeCell {width: 35%; text-align: center;}
 .groupCell {width: 10%; text-align: center;}
 
 input.groupReportButton, input.stateReportButton, input.idReportButton {padding: 0;
