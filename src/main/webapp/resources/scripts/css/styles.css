@@ -1,18 +1,25 @@
-html, body {margin: 0; padding: 0;}
+html, body {margin: 0; padding: 0; font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
 table.main {width: 100%; height: 100%; border-collapse: collapse;}
 td {padding: 0;}
-td.top {height: 35%;}
-td.CFD {width: 33%; height: 30%;}
-td.FX {width: 34%; height: 30%;}
-td.DMA {width: 33%; height: 30%;}
-td.bottom {height: 35%;}
+td.top {height: 35%; vertical-align: bottom; color: darkslategray;}
+td.platformSelector {height: 8%; padding: 10px;}
 
-.reportMainFrame {width: 100%; height: 100%; border-collapse: collapse; border-top-color: black; border-left-color: black;}
-.reportWindow {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-right: 15px;}
-.backToPlatforms {width: 15%; height: 7%; border-right-color: black; border-bottom-color: black;} /*background-color: slategrey; */
-.serverName {background-color: slategrey; border-left-color: black; border-bottom-color: black;}
-td.report1, td.report2, td.report3, td.report4{width: 15%; height: 5%; background-color: dodgerblue; border-bottom-color: black; border-top-color: black; border-right-color: black;}
-td.reportEmpty {width:15%;}
+input.platformSelectorButton {padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 15%;
+    background-color: dodgerblue;
+    border: 2px solid dodgerblue;
+    font-size: 15px;
+    border-radius: 10px;}
+input.platformSelectorButton:hover {background-color: lightskyblue; font-weight: bolder;}
+
+.reportMainFrame {width: 70%; height: 70%; margin: 5% auto auto; border-collapse: collapse; border-color: darkblue;}
+.reportWindow {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-right: 15px; border-left-color: transparent; background-color: aliceblue;}
+.backToPlatforms {width: 20%; height: 10%; background-color: aliceblue; border-right-color: darkblue; border-bottom-color: darkblue; padding: 7px;} /*background-color: slategrey; */
+.serverName {background-color: aliceblue; border-left-color: darkblue; border-bottom-color: darkblue; vertical-align: middle; font-size: 25px;}
+td.report1, td.report2, td.report3 {width: 15%; height: 10%; background-color: aliceblue; border-bottom-color: transparent; border-top-color: transparent; border-right-color: darkblue; margin:0; padding: 7px;}
+td.reportEmpty {width:15%;border-right-color: darkblue; background-color: aliceblue;}
 
 table.report1 {width: 100%; height: 100%; border-collapse: collapse;}
 td.enterNumber {height: 5%; padding-left: 15px;}
@@ -20,22 +27,22 @@ td.accountInputArea {height: 5%; width: 11%; padding-left: 15px;}
 td.submitButtonArea {height: 5%;}
 td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
-table.groupOutput, table.stateOutput {width: 35%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
-table.groupOutput thead>tr>th, table.stateOutput thead>tr>th {border-bottom: 2px solid darkslategrey;}
-table.groupOutput tbody>tr>td, table.stateOutput tbody>tr>td {border-top: 1px solid darkslategrey;}
+table.groupOutput, table.stateOutput, table.idOutput {width: 45%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
+table.groupOutput thead>tr>th, table.stateOutput thead>tr>th, table.idOutput thead>tr>th {border-bottom: 2px solid darkslategrey;}
+table.groupOutput tbody>tr>td, table.stateOutput tbody>tr>td, table.idOutput tbody>tr>td {border-top: 1px solid darkslategrey; padding-top: 7px; padding-bottom: 7px;}
 .accountCell {width: 8%; text-align: center;}
-.changeTimeCell {width: 17%; text-align: center;}
+.changeTimeCell {width: 25%; text-align: center;}
 .groupCell {width: 10%; text-align: center;}
 
-input.groupReportButton, input.stateReportButton {padding: 0;
+input.groupReportButton, input.stateReportButton, input.idReportButton {padding: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     background-color: dodgerblue;
     border: 2px solid dodgerblue;
-    font-size: 15px;
-    font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
-input.groupReportButton:hover, input.stateReportButton:hover {background-color: azure; font-weight: bolder;}
+    font-size: 17px;
+    border-radius: 10px;}
+input.groupReportButton:hover, input.stateReportButton:hover, input.idReportButton:hover {background-color: lightskyblue; font-weight: bolder;}
 
 input.backButton {padding: 0;
     margin: 0;
@@ -43,6 +50,6 @@ input.backButton {padding: 0;
     width: 100%;
     background-color: slategray;
     border: 2px solid slategray;
-    font-size: 15px;
-    font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
-input.backButton:hover {background-color: azure; font-weight: bolder;}
+    font-size: 20px;
+    border-radius: 10px;}
+input.backButton:hover {background-color: lightsteelblue; font-weight: bolder;}

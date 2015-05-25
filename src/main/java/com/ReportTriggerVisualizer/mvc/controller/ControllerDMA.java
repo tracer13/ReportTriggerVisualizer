@@ -1,7 +1,7 @@
 package com.ReportTriggerVisualizer.mvc.controller;
 
-import com.ReportTriggerVisualizer.mvc.model.UsersLogCFD;
-import com.ReportTriggerVisualizer.mvc.service.CFDService;
+import com.ReportTriggerVisualizer.mvc.model.UsersLogDMA;
+import com.ReportTriggerVisualizer.mvc.service.DMAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,24 +12,24 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/CFDreports")
-public class ControllerCFD {
+@RequestMapping("/DMAreports")
+public class ControllerDMA {
 
     @Autowired
-    CFDService cfdService;
+    DMAService dmaService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome() {
-        return "CFDreports";
+        return "DMAreports";
     }
 
     @RequestMapping(value = "/getGroupLogs", method = RequestMethod.GET)
     public ModelAndView listGroupLogs(@RequestParam("accountInputForGroup") String accountInput, Map<String,Object> map){
 
-        map.put("groupHistoryList", cfdService.getGroupLogForAccount(Long.parseLong(accountInput,10)));
-        map.put("group", new UsersLogCFD());
+        map.put("groupHistoryList", dmaService.getGroupLogForAccount(Long.parseLong(accountInput,10)));
+        map.put("group", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("CFDreports");
+        ModelAndView model = new ModelAndView("DMAreports");
 
         return model;
     }
@@ -37,10 +37,10 @@ public class ControllerCFD {
     @RequestMapping (value = "/getStateLogs", method = RequestMethod.GET)
     public ModelAndView listStateLogs(@RequestParam("accountInputForState") String accountInput, Map<String,Object> map){
 
-        map.put("stateHistoryList", cfdService.getStateLogForAccount(Long.parseLong(accountInput,10)));
-        map.put("state", new UsersLogCFD());
+        map.put("stateHistoryList", dmaService.getStateLogForAccount(Long.parseLong(accountInput,10)));
+        map.put("state", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("CFDreports");
+        ModelAndView model = new ModelAndView("DMAreports");
 
         return model;
     }
@@ -48,10 +48,10 @@ public class ControllerCFD {
     @RequestMapping (value = "/getIdLogs", method = RequestMethod.GET)
     public ModelAndView listIdLogs(@RequestParam("accountInputForId") String accountInput, Map<String,Object> map){
 
-        map.put("idHistoryList", cfdService.getIdLogForAccount(Long.parseLong(accountInput)));
-        map.put("id", new UsersLogCFD());
+        map.put("idHistoryList", dmaService.getIdLogForAccount(Long.parseLong(accountInput)));
+        map.put("id", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("CFDreports");
+        ModelAndView model = new ModelAndView("DMAreports");
 
         return model;
     }

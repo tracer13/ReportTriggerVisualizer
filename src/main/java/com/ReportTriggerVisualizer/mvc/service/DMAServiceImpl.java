@@ -1,6 +1,6 @@
 package com.ReportTriggerVisualizer.mvc.service;
 
-import com.ReportTriggerVisualizer.mvc.model.UsersLogCFD;
+import com.ReportTriggerVisualizer.mvc.model.UsersLogDMA;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,34 +11,34 @@ import java.util.List;
 
 @Service
 @Transactional
-public class CFDServiceImpl implements CFDService {
+public class DMAServiceImpl implements DMAService {
 
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
-    public List<UsersLogCFD> getGroupLogForAccount(Long userLogin) {
+    public List<UsersLogDMA> getGroupLogForAccount(Long userLogin) {
 
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("FROM UsersLogCFD WHERE changes like '%mt4_user_GROUP%' and userLogin=:userLogin");
+                .createQuery("FROM UsersLogDMA WHERE changes like '%mt4_user_GROUP%' and userLogin=:userLogin");
         query.setParameter("userLogin",userLogin);
         return query.list();
     }
 
     @Override
-    public List<UsersLogCFD> getStateLogForAccount(Long userLogin) {
+    public List<UsersLogDMA> getStateLogForAccount(Long userLogin) {
 
         Query query= sessionFactory.getCurrentSession()
-                .createQuery("FROM UsersLogCFD WHERE changes like '%mt4_user_State%' and userLogin=:userLogin");
+                .createQuery("FROM UsersLogDMA WHERE changes like '%mt4_user_State%' and userLogin=:userLogin");
         query.setParameter("userLogin",userLogin);
         return query.list();
     }
 
     @Override
-    public List<UsersLogCFD> getIdLogForAccount(Long userLogin) {
+    public List<UsersLogDMA> getIdLogForAccount(Long userLogin) {
 
         Query query = sessionFactory.getCurrentSession()
-                .createQuery("FROM UsersLogCFD WHERE changes like '%mt4_user_ID%' and userLogin=:userLogin");
+                .createQuery("FROM UsersLogDMA WHERE changes like '%mt4_user_ID%' and userLogin=:userLogin");
         query.setParameter("userLogin", userLogin);
         return query.list();
     }

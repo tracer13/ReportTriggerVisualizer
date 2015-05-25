@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--@elvariable id="groupHistoryList" type="java.util.List"--%>
 <%--@elvariable id="stateHistoryList" type="java.util.List"--%>
+<%--@elvariable id="idHistoryList" type="java.util.List"--%>
 <html>
 <head>
     <title>CFD Report</title>
@@ -21,17 +22,17 @@
                     <input class="backButton" type="button" onclick="self.location='/'" value="Back"/>
                 </td>
                 <td class="serverName" align="middle">
-                    <h2>CFD Reports</h2>
+                    <b>CFD Reports</b>
                 </td>
             </tr>
             <tr>
                 <td class="report1" align="middle">
                     <input class="groupReportButton" type="button" id="groupReportButton" value="Group Change Log"/>
                 </td>
-                <td class="reportWindow" rowspan="5" align="middle">
+                <td class="reportWindow" rowspan="4" align="middle">
 
                     <form id="groupChangesForAccount" method="GET" action="/CFDreports/getGroupLogs" hidden>
-                        <table border="1" class="report1">
+                        <table class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">
                                     Enter account Number:
@@ -78,7 +79,7 @@
 
 
                     <form id="stateChangesForAccount" method="GET" action="/CFDreports/getStateLogs" hidden>
-                        <table border="1" class="report1">
+                        <table class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">
                                     Enter account Number:
@@ -110,13 +111,11 @@
                                             <td class="groupCell"><c:out value="${stateHistoryList[0].oldUserState}"/></td>
                                         </tr>
                                         <c:forEach items="${stateHistoryList}" var="state">
-                                            <%--<c:if test="${not empty state.newUserState}">--%>
                                             <tr align="middle">
                                                 <td class="accountCell">${state.userLogin}</td>
                                                 <td class="changeTimeCell">${state.dateTime}</td>
                                                 <td class="groupCell">${state.newUserState}</td>
                                             </tr>
-                                            <%--</c:if>--%>
                                         </c:forEach>
                                         </tbody>
                                     </table>
@@ -126,6 +125,52 @@
                         </table>
                     </form>
 
+                    <form id="idChangesForAccount" method="GET" action="/CFDreports/getIdLogs" hidden>
+                        <table class="report1">
+                            <tr>
+                                <td class="enterNumber" colspan="2" align="left">
+                                    Enter account Number:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="accountInputArea" align="left">
+                                    <input type="text" id="accountInputForId" name="accountInputForId"/>
+                                </td>
+                                <td class="submitButtonArea" align="left">
+                                    <input type="submit" id="accountSubmitButtonForId" value="Get Id">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="outputArea" colspan="2" align="left">
+
+                                    <table class="idOutput table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th class="accountCell">Account</th>
+                                            <th class="changeTimeCell">Change time</th>
+                                            <th class="groupCell">ID</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="idTableBody">
+                                        <tr align="middle">
+                                            <td class="accountCell"><c:out value="${idHistoryList[0].userLogin}"/></td>
+                                            <td class="changeTimeCell"><c:out value="${idHistoryList[0].dateTime}"/></td>
+                                            <td class="groupCell"><c:out value="${idHistoryList[0].oldUserID}"/></td>
+                                        </tr>
+                                        <c:forEach items="${idHistoryList}" var="id">
+                                            <tr align="middle">
+                                                <td class="accountCell">${id.userLogin}</td>
+                                                <td class="changeTimeCell">${id.dateTime}</td>
+                                                <td class="groupCell">${id.newUserID}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
 
                 </td>
             </tr>
@@ -136,17 +181,11 @@
             </tr>
             <tr>
                 <td class="report3" align="middle">
-                    Report 3
-                </td>
-            </tr>
-            <tr>
-                <td class="report4" align="middle">
-                    Report 4
+                    <input class="idReportButton" type="button" id="idReportButton" value="ID Change Log"/>
                 </td>
             </tr>
             <tr>
                 <td class="reportEmpty" align="middle">
-                    Empty
                 </td>
             </tr>
         </tbody>

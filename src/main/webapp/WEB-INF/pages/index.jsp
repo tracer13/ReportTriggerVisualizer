@@ -5,18 +5,28 @@
         <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
         <link rel= "stylesheet" type="text/css" href="<c:url value="/resources/css/styles.css" />"/>
     </head>
-    <table border="1" class="main">
+    <table class="main">
         <tbody>
             <tr>
-                <td class="top" colspan="3" align="middle">top</td>
+                <td class="top" colspan="3" align="middle"><h2>Select Platform</h2></td>
             </tr>
             <tr>
-                <td class="CFD" align="middle"><a href="<c:out value="CFDreports"/>">CFD</a></td>
-                <td class="FX" align="middle"><a href="<c:out value="FXreports"/>">FX</a></td>
-                <td class="DMA" align="middle"><a href="<c:out value="DMAreports"/>">DMA</a></td>
+                <td class="platformSelector" align="middle">
+                    <input class="platformSelectorButton" type="button" onclick="self.location='/CFDreports'" value="CFD"/>
+                </td>
             </tr>
             <tr>
-                <td class="bottom" colspan="3" align="middle">bottom</td>
+                <td class="platformSelector" align="middle">
+                    <input class="platformSelectorButton" type="button" onclick="self.location='/FXreports'" value="FX"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="platformSelector" align="middle">
+                    <input class="platformSelectorButton" type="button" onclick="self.location='/DMAreports'" value="DMA"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="bottom" colspan="3" align="middle"></td>
             </tr>
         </tbody>
     </table>
