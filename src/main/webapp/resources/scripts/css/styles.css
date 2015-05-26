@@ -48,11 +48,27 @@ input.logoutButton:hover {background-color: crimson; font-weight: bolder;}
     width: 400px;
     padding: 20px;
     margin: 100px auto;
-    background: #fff;
+    background: aliceblue;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border: 1px solid #000;
 }
+table.loginTable {width: 100%;}
+
+td.loginTd {
+    padding: 10px 13% 10px 10px;
+}
+
+input.submitLogin {padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 35%;
+    background-color: dodgerblue;
+    border: 2px solid dodgerblue;
+    font-size: 15px;
+    border-radius: 7px;}
+input.submitLogin:hover {background-color: lightskyblue; font-weight: bolder;}
+
 
 
 .reportMainFrame {width: 70%; height: 70%; margin: 5% auto auto; border-collapse: collapse; border-color: darkblue;}

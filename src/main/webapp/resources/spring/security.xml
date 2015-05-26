@@ -8,24 +8,24 @@
 
     <http pattern="/login" security="none"/>
 
-    <http auto-config="true">
-          <intercept-url pattern="/*" access="ROLE_USER"/>
-          <form-login
-                  login-page="/login"
-                  default-target-url="/"
-                  authentication-failure-url="/login?error"
-                  username-parameter="username"
-                  password-parameter="password"/>
-          <logout logout-success-url="/login?logout"/>
+    <http>
+
+        <intercept-url pattern="/*" access="ROLE_USER"/>
+        <form-login
+            login-page="/login"
+            default-target-url="/"
+            authentication-failure-url="/login?error"
+            username-parameter="username"
+            password-parameter="password"/>
+        <logout logout-success-url="/login?logout"/>
     </http>
 
 
-       <authentication-manager>
-              <authentication-provider>
-                     <user-service>
-                            <user name="admin" password="admin" authorities="ROLE_USER"/>
-                     </user-service>
+        <authentication-manager>
+            <authentication-provider>
+                <user-service>
+                    <user name="admin" password="admin" authorities="ROLE_USER"/>
+                </user-service>
               </authentication-provider>
        </authentication-manager>
-
 </beans:beans>

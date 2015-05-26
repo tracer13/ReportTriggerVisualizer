@@ -44,7 +44,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:\Ars\ReportTriggerVisualizer\target/MANIFEST.MF" />
+        <element id="file-copy" path="D:\ReportTriggerVisualizer\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="ReportTriggerVisualizer/web/Web" />
     </root>
