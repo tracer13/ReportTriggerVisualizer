@@ -29,9 +29,7 @@ public class ControllerCFD {
         map.put("groupHistoryList", cfdService.getGroupLogForAccount(Long.parseLong(accountInput,10)));
         map.put("group", new UsersLogCFD());
 
-        ModelAndView model = new ModelAndView("CFDreports");
-
-        return model;
+        return new ModelAndView("CFDreports");
     }
 
     @RequestMapping (value = "/getStateLogs", method = RequestMethod.GET)
@@ -40,9 +38,7 @@ public class ControllerCFD {
         map.put("stateHistoryList", cfdService.getStateLogForAccount(Long.parseLong(accountInput,10)));
         map.put("state", new UsersLogCFD());
 
-        ModelAndView model = new ModelAndView("CFDreports");
-
-        return model;
+        return new ModelAndView("CFDreports");
     }
 
     @RequestMapping (value = "/getIdLogs", method = RequestMethod.GET)
@@ -51,8 +47,6 @@ public class ControllerCFD {
         map.put("idHistoryList", cfdService.getIdLogForAccount(Long.parseLong(accountInput)));
         map.put("id", new UsersLogCFD());
 
-        ModelAndView model = new ModelAndView("CFDreports");
-
-        return model;
+        return new ModelAndView("CFDreports");
     }
 }

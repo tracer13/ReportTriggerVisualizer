@@ -26,7 +26,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="bottom" colspan="3" align="middle"></td>
+                <td class="logout" colspan="3" align="middle">
+                    <input class="logoutButton" type="button" value="Logout" onclick="self.location='/j_spring_security_logout'"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="bottom" colspan="3" align="middle">
+                </td>
             </tr>
         </tbody>
     </table>

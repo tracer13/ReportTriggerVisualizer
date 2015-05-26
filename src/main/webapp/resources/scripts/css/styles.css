@@ -3,6 +3,7 @@ table.main {width: 100%; height: 100%; border-collapse: collapse;}
 td {padding: 0;}
 td.top {height: 35%; vertical-align: bottom; color: darkslategray;}
 td.platformSelector {height: 8%; padding: 10px;}
+td.logout {height: 10%; padding: 20px;}
 
 input.platformSelectorButton {padding: 0;
     margin: 0;
@@ -14,9 +15,49 @@ input.platformSelectorButton {padding: 0;
     border-radius: 10px;}
 input.platformSelectorButton:hover {background-color: lightskyblue; font-weight: bolder;}
 
+input.logoutButton {padding: 0;
+    margin: 0;
+    height: 75%;
+    width: 7%;
+    background-color: grey;
+    border: 2px solid darkslategray;
+    font-size: 15px;
+    border-radius: 10px;}
+input.logoutButton:hover {background-color: crimson; font-weight: bolder;}
+
+
+.error {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+}
+
+.msg {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #31708f;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+}
+
+#login-box {
+    width: 400px;
+    padding: 20px;
+    margin: 100px auto;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border: 1px solid #000;
+}
+
+
 .reportMainFrame {width: 70%; height: 70%; margin: 5% auto auto; border-collapse: collapse; border-color: darkblue;}
 .reportWindow {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-right: 15px; border-left-color: transparent; background-color: aliceblue;}
-.backToPlatforms {width: 20%; height: 10%; background-color: aliceblue; border-right-color: darkblue; border-bottom-color: darkblue; padding: 7px;} /*background-color: slategrey; */
+.backToPlatforms {width: 20%; height: 10%; background-color: aliceblue; border-right-color: darkblue; border-bottom-color: darkblue; padding: 7px;}
 .serverName {background-color: aliceblue; border-left-color: darkblue; border-bottom-color: darkblue; vertical-align: middle; font-size: 25px;}
 td.report1, td.report2, td.report3 {width: 15%; height: 10%; background-color: aliceblue; border-bottom-color: transparent; border-top-color: transparent; border-right-color: darkblue; margin:0; padding: 7px;}
 td.reportEmpty {width:15%;border-right-color: darkblue; background-color: aliceblue;}

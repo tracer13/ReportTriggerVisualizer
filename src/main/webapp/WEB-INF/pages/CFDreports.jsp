@@ -11,7 +11,6 @@
     <link rel= "stylesheet" type="text/css" href="<c:url value="/resources/css/styles.css" />"/>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="<c:url value="/resources/js/scripts.js"/>"></script>
 </head>
 <body>

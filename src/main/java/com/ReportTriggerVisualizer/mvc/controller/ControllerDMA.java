@@ -29,9 +29,7 @@ public class ControllerDMA {
         map.put("groupHistoryList", dmaService.getGroupLogForAccount(Long.parseLong(accountInput,10)));
         map.put("group", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("DMAreports");
-
-        return model;
+        return new ModelAndView("DMAreports");
     }
 
     @RequestMapping (value = "/getStateLogs", method = RequestMethod.GET)
@@ -40,9 +38,7 @@ public class ControllerDMA {
         map.put("stateHistoryList", dmaService.getStateLogForAccount(Long.parseLong(accountInput,10)));
         map.put("state", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("DMAreports");
-
-        return model;
+        return new ModelAndView("DMAreports");
     }
 
     @RequestMapping (value = "/getIdLogs", method = RequestMethod.GET)
@@ -51,8 +47,6 @@ public class ControllerDMA {
         map.put("idHistoryList", dmaService.getIdLogForAccount(Long.parseLong(accountInput)));
         map.put("id", new UsersLogDMA());
 
-        ModelAndView model = new ModelAndView("DMAreports");
-
-        return model;
+        return new ModelAndView("DMAreports");
     }
 }

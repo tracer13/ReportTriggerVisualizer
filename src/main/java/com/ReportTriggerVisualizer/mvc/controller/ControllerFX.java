@@ -29,9 +29,7 @@ public class ControllerFX {
         map.put("groupHistoryList", fxService.getGroupLogForAccount(Long.parseLong(accountInput,10)));
         map.put("group", new UsersLogFX());
 
-        ModelAndView model = new ModelAndView("FXreports");
-
-        return model;
+        return new ModelAndView("FXreports");
     }
 
     @RequestMapping (value = "/getStateLogs", method = RequestMethod.GET)
@@ -40,9 +38,7 @@ public class ControllerFX {
         map.put("stateHistoryList", fxService.getStateLogForAccount(Long.parseLong(accountInput,10)));
         map.put("state", new UsersLogFX());
 
-        ModelAndView model = new ModelAndView("FXreports");
-
-        return model;
+        return new ModelAndView("FXreports");
     }
 
     @RequestMapping (value = "/getIdLogs", method = RequestMethod.GET)
@@ -51,8 +47,6 @@ public class ControllerFX {
         map.put("idHistoryList", fxService.getIdLogForAccount(Long.parseLong(accountInput)));
         map.put("id", new UsersLogFX());
 
-        ModelAndView model = new ModelAndView("FXreports");
-
-        return model;
+        return new ModelAndView("FXreports");
     }
 }
