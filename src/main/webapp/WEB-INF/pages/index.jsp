@@ -12,22 +12,29 @@
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="self.location='/CFDreports'" value="CFD"/>
+                    <input class="platformSelectorButton" type="button" onclick="window.location='/CFDreports'" value="CFD"/>
                 </td>
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="self.location='/FXreports'" value="FX"/>
+                    <input class="platformSelectorButton" type="button" onclick="window.location='/FXreports'" value="FX"/>
                 </td>
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="self.location='/DMAreports'" value="DMA"/>
+                    <input class="platformSelectorButton" type="button" onclick="window.location='/DMAreports'" value="DMA"/>
                 </td>
             </tr>
             <tr>
+                <c:url value="/j_spring_security_logout" var="logoutUrl" />
+                <form action="${logoutUrl}" method="post" id="logoutForm"/>
+                <script>
+                    function formSubmit() {
+                        document.getElementById("logoutForm").submit();
+                    }
+                </script>
                 <td class="logout" colspan="3" align="middle">
-                    <input class="logoutButton" type="button" value="Logout" onclick="self.location='/j_spring_security_logout'"/>
+                    <input class="logoutButton" type="button" value="Logout" onclick="formSubmit()"/>
                 </td>
             </tr>
             <tr>
