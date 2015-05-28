@@ -53,20 +53,17 @@
                                             <tr>
                                                 <th class="accountCell">Account</th>
                                                 <th class="changeTimeCell">Change time</th>
-                                                <th class="groupCell">Group</th>
+                                                <th class="oldGroupCell">Old Group</th>
+                                                <th class="newGroupCell">New Group</th>
                                             </tr>
                                         </thead>
                                         <tbody id="groupTableBody">
-                                            <tr align="middle">
-                                                <td class="accountCell"><c:out value="${groupHistoryList[0].userLogin}"/></td>
-                                                <td class="changeTimeCell"><c:out value="${groupHistoryList[0].dateTime}"/></td>
-                                                <td class="groupCell"><c:out value="${groupHistoryList[0].oldUserGroup}"/></td>
-                                            </tr>
                                             <c:forEach items="${groupHistoryList}" var="group">
                                                 <tr align="middle">
                                                     <td class="accountCell">${group.userLogin}</td>
                                                     <td class="changeTimeCell">${group.dateTime}</td>
-                                                    <td class="groupCell">${group.newUserGroup}</td>
+                                                    <td class="oldGroupCell">${group.oldUserGroup}</td>
+                                                    <td class="newGroupCell">${group.newUserGroup}</td>
                                                 </tr>
                                             </c:forEach>
                                         </tbody>
@@ -100,20 +97,17 @@
                                         <tr>
                                             <th class="accountCell">Account</th>
                                             <th class="changeTimeCell">Change time</th>
-                                            <th class="groupCell">State</th>
+                                            <th class="oldGroupCell">Old State</th>
+                                            <th class="newGroupCell">New State</th>
                                         </tr>
                                         </thead>
                                         <tbody id="stateTableBody">
-                                        <tr align="middle">
-                                            <td class="accountCell"><c:out value="${stateHistoryList[0].userLogin}"/></td>
-                                            <td class="changeTimeCell"><c:out value="${stateHistoryList[0].dateTime}"/></td>
-                                            <td class="groupCell"><c:out value="${stateHistoryList[0].oldUserState}"/></td>
-                                        </tr>
                                         <c:forEach items="${stateHistoryList}" var="state">
                                             <tr align="middle">
                                                 <td class="accountCell">${state.userLogin}</td>
                                                 <td class="changeTimeCell">${state.dateTime}</td>
-                                                <td class="groupCell">${state.newUserState}</td>
+                                                <td class="oldGroupCell">${state.oldUserState}</td>
+                                                <td class="newGroupCell">${state.newUserState}</td>
                                             </tr>
                                         </c:forEach>
                                         </tbody>
@@ -147,20 +141,17 @@
                                         <tr>
                                             <th class="accountCell">Account</th>
                                             <th class="changeTimeCell">Change time</th>
-                                            <th class="groupCell">ID</th>
+                                            <th class="oldGroupCell">Old ID</th>
+                                            <th class="newGroupCell">New ID</th>
                                         </tr>
                                         </thead>
                                         <tbody id="idTableBody">
-                                        <tr align="middle">
-                                            <td class="accountCell"><c:out value="${idHistoryList[0].userLogin}"/></td>
-                                            <td class="changeTimeCell"><c:out value="${idHistoryList[0].dateTime}"/></td>
-                                            <td class="groupCell"><c:out value="${idHistoryList[0].oldUserID}"/></td>
-                                        </tr>
                                         <c:forEach items="${idHistoryList}" var="id">
                                             <tr align="middle">
                                                 <td class="accountCell">${id.userLogin}</td>
                                                 <td class="changeTimeCell">${id.dateTime}</td>
-                                                <td class="groupCell">${id.newUserID}</td>
+                                                <td class="oldGroupCell">${id.oldUserID}</td>
+                                                <td class="newGroupCell">${id.newUserID}</td>
                                             </tr>
                                         </c:forEach>
                                         </tbody>

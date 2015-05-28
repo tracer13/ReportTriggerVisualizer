@@ -1,14 +1,14 @@
 html, body {margin: 0; padding: 0; font-family:Verdana, Geneva, Tahoma, Arial, Helvetica, sans-serif;}
-table.main {width: 100%; height: 100%; border-collapse: collapse;}
+table.main {width: 300px; height: 400px; border-collapse: collapse; align-self: center; margin-top: 10em}
 td {padding: 0;}
-td.top {height: 35%; vertical-align: bottom; color: darkslategray;}
-td.platformSelector {height: 8%; padding: 10px;}
+td.top {height: 50px; vertical-align: bottom; color: darkslategray;}
+td.platformSelector {height: 8%; padding: 10px; align-items: center}
 td.logout {height: 10%; padding: 20px;}
 
 input.platformSelectorButton {padding: 0;
     margin: 0;
     height: 100%;
-    width: 15%;
+    width: 95%;
     background-color: dodgerblue;
     border: 2px solid dodgerblue;
     font-size: 15px;
@@ -18,7 +18,7 @@ input.platformSelectorButton:hover {background-color: lightskyblue; font-weight:
 input.logoutButton {padding: 0;
     margin: 0;
     height: 75%;
-    width: 7%;
+    width: 35%;
     background-color: grey;
     border: 2px solid darkslategray;
     font-size: 15px;
@@ -84,12 +84,12 @@ td.accountInputArea {height: 5%; width: 11%; padding-left: 15px;}
 td.submitButtonArea {height: 5%;}
 td.outputArea {vertical-align: top; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;}
 
-table.groupOutput, table.stateOutput, table.idOutput {width: 55%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
+table.groupOutput, table.stateOutput, table.idOutput {width: 65%; height: 100%; border-collapse: collapse; border-bottom: 1px black;}
 table.groupOutput thead>tr>th, table.stateOutput thead>tr>th, table.idOutput thead>tr>th {border-bottom: 2px solid darkslategrey;}
 table.groupOutput tbody>tr>td, table.stateOutput tbody>tr>td, table.idOutput tbody>tr>td {border-top: 1px solid darkslategrey; padding-top: 7px; padding-bottom: 7px;}
 .accountCell {width: 10%; text-align: center;}
 .changeTimeCell {width: 35%; text-align: center;}
-.groupCell {width: 10%; text-align: center;}
+.oldGroupCell, .newGroupCell {width: 17.5%; text-align: center;}
 
 input.groupReportButton, input.stateReportButton, input.idReportButton {padding: 0;
     margin: 0;

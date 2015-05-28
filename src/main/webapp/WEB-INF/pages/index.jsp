@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html charset=UTF-8">
         <link rel= "stylesheet" type="text/css" href="<c:url value="/resources/css/styles.css" />"/>
     </head>
+    <div align="center">
     <table class="main">
         <tbody>
             <tr>
@@ -37,10 +38,7 @@
                     <input class="logoutButton" type="button" value="Logout" onclick="formSubmit()"/>
                 </td>
             </tr>
-            <tr>
-                <td class="bottom" colspan="3" align="middle">
-                </td>
-            </tr>
         </tbody>
     </table>
+    </div>
 </html>
