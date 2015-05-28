@@ -18,7 +18,7 @@
         <tbody>
             <tr>
                 <td class="backToPlatforms" align="middle">
-                    <input class="backButton" type="button" onclick="self.location='/'" value="Back"/>
+                    <input class="backButton" type="button" onclick="self.location='${pageContext.request.contextPath}/'" value="Back"/>
                 </td>
                 <td class="serverName" align="middle">
                     <b>CFD Reports</b>
@@ -30,7 +30,7 @@
                 </td>
                 <td class="reportWindow" rowspan="4" align="middle">
 
-                    <form id="groupChangesForAccount" method="GET" action="/CFDreports/getGroupLogs" hidden>
+                    <form id="groupChangesForAccount" method="GET" action="${pageContext.request.contextPath}/CFDreports/getGroupLogs" hidden>
                         <table class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">
@@ -77,7 +77,7 @@
                     </form>
 
 
-                    <form id="stateChangesForAccount" method="GET" action="/CFDreports/getStateLogs" hidden>
+                    <form id="stateChangesForAccount" method="GET" action="${pageContext.request.contextPath}/CFDreports/getStateLogs" hidden>
                         <table class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">
@@ -124,7 +124,7 @@
                         </table>
                     </form>
 
-                    <form id="idChangesForAccount" method="GET" action="/CFDreports/getIdLogs" hidden>
+                    <form id="idChangesForAccount" method="GET" action="${pageContext.request.contextPath}/CFDreports/getIdLogs" hidden>
                         <table class="report1">
                             <tr>
                                 <td class="enterNumber" colspan="2" align="left">

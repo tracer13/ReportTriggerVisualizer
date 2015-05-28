@@ -18,7 +18,7 @@
     <tbody>
     <tr>
         <td class="backToPlatforms" align="middle">
-            <input class="backButton" type="button" onclick="self.location='/'" value="Back"/>
+            <input class="backButton" type="button" onclick="self.location='${pageContext.request.contextPath}/'" value="Back"/>
         </td>
         <td class="serverName" align="middle">
             <b>FX Reports</b>
@@ -30,7 +30,7 @@
         </td>
         <td class="reportWindow" rowspan="4" align="middle">
 
-            <form id="groupChangesForAccount" method="GET" action="/FXreports/getGroupLogs" hidden>
+            <form id="groupChangesForAccount" method="GET" action="${pageContext.request.contextPath}/FXreports/getGroupLogs" hidden>
                 <table class="report1">
                     <tr>
                         <td class="enterNumber" colspan="2" align="left">
@@ -77,7 +77,7 @@
             </form>
 
 
-            <form id="stateChangesForAccount" method="GET" action="/FXreports/getStateLogs" hidden>
+            <form id="stateChangesForAccount" method="GET" action="${pageContext.request.contextPath}/FXreports/getStateLogs" hidden>
                 <table class="report1">
                     <tr>
                         <td class="enterNumber" colspan="2" align="left">
@@ -124,7 +124,7 @@
                 </table>
             </form>
 
-            <form id="idChangesForAccount" method="GET" action="/FXreports/getIdLogs" hidden>
+            <form id="idChangesForAccount" method="GET" action="${pageContext.request.contextPath}/FXreports/getIdLogs" hidden>
                 <table class="report1">
                     <tr>
                         <td class="enterNumber" colspan="2" align="left">

@@ -12,17 +12,17 @@
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="window.location='/CFDreports'" value="CFD"/>
+                    <input class="platformSelectorButton" type="button" onclick="self.location='${pageContext.request.contextPath}/CFDreports'" value="CFD"/>
                 </td>
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="window.location='/FXreports'" value="FX"/>
+                    <input class="platformSelectorButton" type="button" onclick="self.location='${pageContext.request.contextPath}/FXreports'" value="FX"/>
                 </td>
             </tr>
             <tr>
                 <td class="platformSelector" align="middle">
-                    <input class="platformSelectorButton" type="button" onclick="window.location='/DMAreports'" value="DMA"/>
+                    <input class="platformSelectorButton" type="button" onclick="self.location='${pageContext.request.contextPath}/DMAreports'" value="DMA"/>
                 </td>
             </tr>
             <tr>
