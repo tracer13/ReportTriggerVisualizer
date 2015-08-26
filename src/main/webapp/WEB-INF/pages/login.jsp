@@ -15,7 +15,7 @@
 
 <div id="login-box">
 
-    <h3 align="middle">Report trigger visualizer</h3>
+    <h3 align="middle">Change Log</h3>
 
     <c:if test="${not empty error}">
         <div class="error">${error}</div>
@@ -38,12 +38,11 @@
                 <td><input type='password' name='password' /></td>
             </tr>
             <tr>
-                <td class="loginTd" colspan='2' align="middle">
+                <td class="loginTd" colspan='2' align="middle" height="50px">
                     <input class="submitLogin" name="submit" type="submit" value="Login" />
                 </td>
             </tr>
         </table>
-
     </form>
 </div>
 

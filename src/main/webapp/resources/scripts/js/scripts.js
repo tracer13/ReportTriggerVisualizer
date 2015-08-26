@@ -45,9 +45,16 @@ $(document).ready(function(){
         $("#idChangesForAccount").show();
     }
 
+    function isNumber(n) {
+        return !isNaN(parseInt(n)) && isFinite(n);
+    }
+
     $("#groupChangesForAccount").submit(function(){
         if ($.trim($("#accountInputForGroup").val()) === ""){
             alert ('input field is empty');
+            return false;
+        }else if (!isNumber($("#accountInputForGroup").val())){
+            alert ('input may contain digits only');
             return false;
         }
     });
@@ -56,12 +63,18 @@ $(document).ready(function(){
         if ($.trim($("#accountInputForState").val()) === ""){
             alert ('input field is empty');
             return false;
+        }else if (!isNumber($("#accountInputForState").val())){
+            alert ('input may contain digits only');
+            return false;
         }
     });
 
     $("#idChangesForAccount").submit(function(){
         if ($.trim($("#accountInputForId").val()) === ""){
             alert ('input field is empty');
+            return false;
+        }else if (!isNumber($("#accountInputForId").val())){
+            alert ('input may contain digits only');
             return false;
         }
     });

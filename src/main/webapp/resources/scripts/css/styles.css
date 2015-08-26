@@ -3,7 +3,7 @@ table.main {width: 300px; height: 400px; border-collapse: collapse; align-self: 
 td {padding: 0;}
 td.top {height: 50px; vertical-align: bottom; color: darkslategray;}
 td.platformSelector {height: 8%; padding: 10px; align-items: center}
-td.logout {height: 10%; padding: 20px;}
+td.logout {height: 13%; padding: 20px;}
 
 input.platformSelectorButton {padding: 0;
     margin: 0;
@@ -57,6 +57,7 @@ table.loginTable {width: 100%;}
 
 td.loginTd {
     padding: 10px 13% 10px 10px;
+    margin: 5px;
 }
 
 input.submitLogin {padding: 0;

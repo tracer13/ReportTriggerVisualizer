@@ -1,6 +1,6 @@
 package com.ReportTriggerVisualizer.mvc.service;
 
-import com.ReportTriggerVisualizer.mvc.model.UsersLogFX;
+import com.ReportTriggerVisualizer.mvc.model.UsersLog;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,29 +17,62 @@ public class FXServiceImpl implements FXService {
     SessionFactory sessionFactory;
 
     @Override
-    public List<UsersLogFX> getGroupLogForAccount(Long userLogin) {
+    public List<UsersLog> getGroupLogForAccount(Long userLogin) {
+
+        List outputList = null;
 
         Query query = sessionFactory.getCurrentSession()
                 .createQuery("FROM UsersLogFX WHERE changes like '%mt4_user_GROUP%' and userLogin=:userLogin");
         query.setParameter("userLogin",userLogin);
-        return query.list();
+        outputList = query.list();
+
+        if(outputList == null || outputList.isEmpty()){
+            Query secondQuery = sessionFactory.getCurrentSession()
+                    .createQuery("FROM UsersLogFXWL WHERE changes like '%mt4_user_GROUP%' and userLogin=:userLogin");
+            secondQuery.setParameter("userLogin",userLogin);
+            outputList = secondQuery.list();
+        }
+
+        return outputList;
     }
 
     @Override
-    public List<UsersLogFX> getStateLogForAccount(Long userLogin) {
+    public List<UsersLog> getStateLogForAccount(Long userLogin) {
+
+        List outputList = null;
 
         Query query= sessionFactory.getCurrentSession()
                 .createQuery("FROM UsersLogFX WHERE changes like '%mt4_user_State%' and userLogin=:userLogin");
         query.setParameter("userLogin",userLogin);
-        return query.list();
+        outputList = query.list();
+
+        if(outputList == null || outputList.isEmpty()){
+            Query secondQuery = sessionFactory.getCurrentSession()
+                    .createQuery("FROM UsersLogFXWL WHERE changes like '%mt4_user_State%' and userLogin=:userLogin");
+            secondQuery.setParameter("userLogin",userLogin);
+            outputList = secondQuery.list();
+        }
+
+        return outputList;
     }
 
     @Override
-    public List<UsersLogFX> getIdLogForAccount(Long userLogin) {
+    public List<UsersLog> getIdLogForAccount(Long userLogin) {
+
+        List outputList = null;
 
         Query query = sessionFactory.getCurrentSession()
                 .createQuery("FROM UsersLogFX WHERE changes like '%mt4_user_ID%' and userLogin=:userLogin");
         query.setParameter("userLogin", userLogin);
-        return query.list();
+        outputList = query.list();
+
+        if(outputList == null || outputList.isEmpty()){
+            Query secondQuery = sessionFactory.getCurrentSession()
+                    .createQuery("FROM UsersLogFXWL WHERE changes like '%mt4_user_ID%' and userLogin=:userLogin");
+            secondQuery.setParameter("userLogin",userLogin);
+            outputList = secondQuery.list();
+        }
+
+        return outputList;
     }
 }
