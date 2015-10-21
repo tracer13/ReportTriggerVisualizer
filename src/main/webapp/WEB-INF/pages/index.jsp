@@ -27,6 +27,11 @@
                 </td>
             </tr>
             <tr>
+                <td class="platformSelector" align="middle">
+                    <input class="platformSelectorButton" type="button" onclick="self.location='${pageContext.request.contextPath}/INSTreports'" value="INST"/>
+                </td>
+            </tr>
+            <tr>
                 <c:url value="/j_spring_security_logout" var="logoutUrl" />
                 <form action="${logoutUrl}" method="post" id="logoutForm"/>
                 <script>
