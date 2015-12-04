@@ -27,6 +27,21 @@ $(document).ready(function(){
         $("#stateTableBody").empty();
     });
 
+    $("#withdrawalReportButton").click(function(){
+
+        $("#withdrawalReportForIB").show();
+        $("#transfersReportForIB").hide();
+        $("#fromTransfersTableBody").empty();
+        $("#toTransfersTableBody").empty();
+    });
+
+    $("#transfersReportButton").click(function(){
+
+        $("#transfersReportForIB").show();
+        $("#withdrawalReportForIB").hide();
+        $("#withdrawalsTableBody").empty();
+    });
+
     if(window.location.href.indexOf("getGroupLogs") > -1){
         $("#groupChangesForAccount").show();
         $("#stateChangesForAccount").hide();
@@ -43,6 +58,16 @@ $(document).ready(function(){
         $("#groupChangesForAccount").hide();
         $("#stateChangesForAccount").hide();
         $("#idChangesForAccount").show();
+    }
+
+    if(window.location.href.indexOf("getWithdrawals") > -1){
+        $("#withdrawalReportForIB").show();
+        $("#transfersReportForIB").hide();
+    }
+
+    if(window.location.href.indexOf("getTransfers") > -1){
+        $("#withdrawalReportForIB").hide();
+        $("#transfersReportForIB").show();
     }
 
     function isNumber(n) {

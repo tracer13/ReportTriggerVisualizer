@@ -9,7 +9,7 @@
     <http pattern="/login" security="none"/>
 
     <http>
-
+        <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS"/>
         <intercept-url pattern="/*" access="ROLE_USER"/>
         <form-login
             login-page="/login"

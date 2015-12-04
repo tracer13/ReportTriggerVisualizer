@@ -106,6 +106,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!--Mongo-->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
