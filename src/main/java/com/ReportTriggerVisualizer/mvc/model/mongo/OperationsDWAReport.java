@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Document
 public class OperationsDWAReport {
@@ -22,7 +22,10 @@ public class OperationsDWAReport {
     private int statusId;
 
     @Field(value = "Ammount")
-    private float amount;
+    private Double amount;
+
+    @Field(value = "Account")
+    private String account;
 
     @Field(value = "Date")
     private Date date;
@@ -60,12 +63,20 @@ public class OperationsDWAReport {
         this.statusId = statusId;
     }
 
-    public float getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(float amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
     }
 
     public Date getDate() {

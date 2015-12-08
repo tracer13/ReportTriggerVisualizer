@@ -1,8 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--@elvariable id="totalWithdrawal" type="String"--%>
 <%--@elvariable id="withdrawalsList" type="java.util.List"--%>
-<%--@elvariable id="stateHistoryList" type="java.util.List"--%>
-<%--@elvariable id="transfersFrom" type="java.util.List"--%>
-<%--@elvariable id="transfersTo" type="java.util.List"--%>
+<%--@elvariable id="transfersList" type="java.util.List"--%>
+<%--@elvariable id="totalTransfer" type="Double"--%>
 <html>
 <head>
     <title>Private Cabinet Reports</title>
@@ -52,17 +52,20 @@
                                     <table class="groupOutput table-hover">
                                         <thead>
                                             <tr>
-                                                <th class="accountCell">Withdrawals</th>
+                                                <th class="mongoTimeCell">Date</th>
+                                                <th class="accountCell">Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody id="withdrawalsTableBody">
                                             <c:forEach items="${withdrawalsList}" var="withdrawals">
                                                 <tr align="middle">
-                                                    <td class="accountCell">${withdrawals}</td>
+                                                    <td class="mongoTimeCell">${withdrawals.date}</td>
+                                                    <td class="accountCell">${withdrawals.amount}</td>
                                                 </tr>
                                             </c:forEach>
                                             <tr>
-                                                <td style="font-weight: bold" class="accountCell">Total: ${totalWithdrawal}</td>
+                                                <td/>
+                                                <td style="font-weight: bold" class="accountCell">${totalWithdrawal}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -88,41 +91,31 @@
                             </tr>
                             <tr>
                                 <td class="outputArea" colspan="2" align="left">
-                                    <table class="groupOutput table-hover">
+                                    <table class="transfersOutput table-hover">
                                         <thead>
                                             <tr>
-                                                <th class="accountCell">From account : Amount</th>
+                                                <th class="mongoTimeCell">Date</th>
+                                                <th class="newGroupCell">Transfer From IB</th>
+                                                <th class="newGroupCell">Transfer To</th>
+                                                <th class="newGroupCell">Amount</th>
                                             </tr>
                                         </thead>
                                             <tbody id="fromTransfersTableBody">
-                                                <c:forEach items="${transfersFrom}" var="transfersFrom">
+                                                <c:forEach items="${transfersList}" var="transfer">
                                                     <tr align="middle">
-                                                        <td class="accountCell">${transfersFrom}</td>
+                                                        <td class="mongoTimeCell">${transfer.date}</td>
+                                                        <td class="newGroupCell">${transfer.ibCode}</td>
+                                                        <td class="newGroupCell">${transfer.account}</td>
+                                                        <td class="newGroupCell">${transfer.amount}</td>
                                                     </tr>
                                                 </c:forEach>
                                                 <tr>
-                                                    <td style="font-weight: bold" class="accountCell">Total From: ${totalFrom}</td>
+                                                    <td/>
+                                                    <td/>
+                                                    <td/>
+                                                    <td style="font-weight: bold" class="accountCell">${totalTransfer}</td>
                                                 </tr>
                                             </tbody>
-                                    </table>
-                                </td>
-                                <td class="outputArea" colspan="2" align="left">
-                                    <table class="groupOutput table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="accountCell">To account : Amount</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="toTransfersTableBody">
-                                            <c:forEach items="${transfersTo}" var="transfersTo">
-                                                <tr align="middle">
-                                                    <td class="accountCell">${transfersTo}</td>
-                                                </tr>
-                                            </c:forEach>
-                                            <tr>
-                                                <td style="font-weight: bold" class="accountCell">Total To: ${totalTo}</td>
-                                            </tr>
-                                        </tbody>
                                     </table>
                                 </td>
                             </tr>

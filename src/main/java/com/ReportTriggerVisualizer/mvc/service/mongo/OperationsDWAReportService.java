@@ -1,16 +1,14 @@
 package com.ReportTriggerVisualizer.mvc.service.mongo;
 
 import com.ReportTriggerVisualizer.mvc.model.mongo.OperationsDWAReport;
+import com.ReportTriggerVisualizer.mvc.util.MongoHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class OperationsDWAReportService {
@@ -46,6 +44,7 @@ public class OperationsDWAReportService {
         for (String s : collections) {
             withdrawalsList.addAll(mongoODWARTemplate.find(query, OperationsDWAReport.class, s));
         }
+        MongoHelper.sortMongoCollectionByDate(withdrawalsList);
         return withdrawalsList;
     }
 
@@ -57,7 +56,8 @@ public class OperationsDWAReportService {
         Criteria criteria = new Criteria().andOperator(
                 Criteria.where("Category").is("BMFN Account Internal Transfer"),
                 Criteria.where("StatusID").is(1),
-                Criteria.where("IBCode").is(ibCode)
+                Criteria.where("IBCode").is(ibCode),
+                Criteria.where("Ammount").gt(0)
         );
         Query query = new Query(criteria);
 
