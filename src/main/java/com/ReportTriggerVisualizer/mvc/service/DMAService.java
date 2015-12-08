@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface DMAService {
 
-    public List<UsersLogDMA> getGroupLogForAccount(Long userLogin);
+    List<UsersLogDMA> getGroupLogForAccount(Long userLogin);
 
-    public List<UsersLogDMA> getStateLogForAccount(Long userLogin);
+    List<UsersLogDMA> getStateLogForAccount(Long userLogin);
 
-    public List<UsersLogDMA> getIdLogForAccount(Long userLogin);
+    List<UsersLogDMA> getIdLogForAccount(Long userLogin);
 }

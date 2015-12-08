@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface INSTService {
 
-    public List<UsersLog> getGroupLogForAccount(Long userLogin);
+    List<UsersLog> getGroupLogForAccount(Long userLogin);
 
-    public List<UsersLog> getStateLogForAccount(Long userLogin);
+    List<UsersLog> getStateLogForAccount(Long userLogin);
 
-    public List<UsersLog> getIdLogForAccount(Long userLogin);
+    List<UsersLog> getIdLogForAccount(Long userLogin);
 }
