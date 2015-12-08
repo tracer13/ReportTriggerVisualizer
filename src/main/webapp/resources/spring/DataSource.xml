@@ -21,6 +21,8 @@ http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springfr
 
     <mongo:db-factory
             id="mongoODWARFactory"
+            username="${mongo.login}"
+            password="${mongo.pass}"
             dbname="${mongo.db.odwar}"
             mongo-ref="mongo"/>
 

@@ -8,9 +8,9 @@
     <name>ReportTriggerVisualizer</name>
 
     <properties>
-        <spring.version>4.0.6.RELEASE</spring.version>
+        <spring.version>4.1.8.RELEASE</spring.version>
         <spring.security.version>3.1.0.RELEASE</spring.security.version>
-        <version.spring.mongodb>1.4.0.RELEASE</version.spring.mongodb>
+        <version.spring.mongodb>1.8.0.RELEASE</version.spring.mongodb>
         <jackson.version>1.9.10</jackson.version>
     </properties>
 
